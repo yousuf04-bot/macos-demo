@@ -1,0 +1,17 @@
+name: macOS Terminal Demo
+on: [workflow_dispatch]
+jobs:
+  run-macos:
+    runs-on: macos-latest
+    steps:
+      - name: Execute macOS Commands
+        run: |
+          pwd
+          mkdir NexaCore_macOS
+          cd NexaCore_macOS
+          echo "System Audit Log" > log.txt
+          ls -le
+          cat log.txt
+          chmod 600 log.txt
+          ls -le log.txt
+          sw_vers
